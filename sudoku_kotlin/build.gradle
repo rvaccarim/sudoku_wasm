@@ -1,0 +1,55 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.3.72'
+}
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+    js {
+        browser {
+            webpackTask {
+                destinationDirectory = file("$buildDir/bin/js/bundle")
+                doLast {
+                    copy {
+                        from("$projectDir/src/jsMain/web") {
+                            filesMatching("index.html") {
+                                expand(project.properties)
+                            }
+                        }
+                        into(destinationDirectory)
+                    }
+                }
+            }
+        }
+    }
+
+    wasm32() {
+        binaries {
+            executable {
+                // Change to specify fully qualified name of your application's entry point:
+                entryPoint = 'main'
+            }
+        }
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation kotlin('stdlib-common')
+            }
+        }
+
+        wasm32Main {
+            dependencies {
+                implementation(kotlin("stdlib-common"))
+            }
+        }
+
+        jsMain {
+            dependencies {
+                implementation(kotlin("stdlib-js"))
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+class Section(var id: Int, var score: Int)

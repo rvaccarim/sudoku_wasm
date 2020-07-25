@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="sudoku_kotlin-jvm">
+    <output-path>D:\Users\frozen\Documents\03_programming\online\sudoku\sudoku_kotlin\build\libs</output-path>
+    <root id="archive" name="sudoku_kotlin-jvm.jar" />
+  </artifact>
+</component>

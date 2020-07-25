@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="sudoku_kotlin-js">
+    <output-path>D:\Users\frozen\Documents\03_programming\online\sudoku\sudoku_kotlin\build\libs</output-path>
+    <root id="archive" name="sudoku_kotlin-js.jar">
+      <element id="module-output" name="sudoku_kotlin.jsMain" />
+    </root>
+  </artifact>
+</component>
